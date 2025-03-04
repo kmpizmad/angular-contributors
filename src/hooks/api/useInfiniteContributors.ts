@@ -19,7 +19,7 @@ export default function useInfiniteContributors() {
 
 async function fetchPage(page: number) {
   const response = await httpClient.get<IContributor[]>(
-    `https://api.github.com/repos/angular/angular/contributors?page=${page}&per_page=25`,
+    `https://api.github.com/repos/angular/angular/contributors?page=${page}&per_page=15`,
     {
       headers: {
         Accept: 'application/vnd.github.v3+json',
