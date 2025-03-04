@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
 
@@ -43,6 +43,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Custom Theme */
+@theme {
+  --color-body: #121212;
+  --color-muted: #545454;
+  --color-primary: #4474ff;
+  --color-primary-background: #f7f7f7;
+  --color-contributor-image: #ecf2ff;
 }
 
 :root {
