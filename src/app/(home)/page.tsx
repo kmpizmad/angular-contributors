@@ -1,9 +1,11 @@
-import ContributorCard from '@/components/cards/ContributorCard';
+import ContributorList from '@/views/ContributorList';
 
 export default function Home() {
   return (
     <main>
-      <ContributorCard imageUrl="/dummy.png" repoUrl="" name="balintnemeth" tag="@github" contributions={123} />
+      <h1 className="font-bold text-body">Top Contributors</h1>
+      <hr className="mt-4 mb-6 bg-primary-border" />
+      <ContributorList />
     </main>
   );
 }

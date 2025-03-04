@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 type ContributorCardProps = {
@@ -15,7 +16,7 @@ type ContributorCardProps = {
 
 export default function ContributorCard(props: ContributorCardProps) {
   return (
-    <div className="flex flex-col max-w-xs gap-4 p-6 bg-white rounded-xl">
+    <div className="flex flex-col max-w-xs gap-4 p-6 bg-white rounded-xl min-w-xs">
       <div className="flex items-start justify-between">
         <ContributorImage imageUrl={props.imageUrl} tag={props.tag} />
         <Image
@@ -33,7 +34,9 @@ export default function ContributorCard(props: ContributorCardProps) {
       </div>
       <div className="flex items-center justify-center">
         <Button className="uppercase transition-all bg-transparent border-2 rounded cursor-pointer border-primary text-primary hover:text-white">
-          View Repositories
+          <Link href={props.repoUrl} target="_blank">
+            View Repositories
+          </Link>
         </Button>
       </div>
     </div>
