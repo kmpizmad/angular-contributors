@@ -1,0 +1,14 @@
+{
+  "git.rebaseWhenSync": true,
+  "git.autofetch": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "eslint.format.enable": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

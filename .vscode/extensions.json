@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag"
+  ]
+}
