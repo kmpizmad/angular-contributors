@@ -3,6 +3,7 @@
 import { useRef, useEffect } from 'react';
 
 type UseIntersectionObserverProps = IntersectionObserverInit & {
+  observe: boolean;
   onIntersect?: () => void;
 };
 
@@ -10,6 +11,8 @@ export default function useIntersectionObserver(props: UseIntersectionObserverPr
   const observerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (!props.observe) return;
+
     const target = observerRef.current;
     const observer = new IntersectionObserver(
       entries => {
