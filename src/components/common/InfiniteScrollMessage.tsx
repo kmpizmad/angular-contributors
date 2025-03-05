@@ -16,13 +16,18 @@ export default function InfiniteScrollMessage(props: InfiniteScrollMessageProps)
   const observerRef = useIntersectionObserver({
     observe: !props.isError,
     root: null,
-    rootMargin: '200px',
-    threshold: 0.05,
+    rootMargin: '1000px',
+    threshold: 0.01,
     onIntersect: props.onIntersect,
   });
 
   return (
-    <div ref={observerRef} className="h-10 mb-10 text-center">
+    <div
+      ref={observerRef}
+      className={cn('h-10 my-10 text-center', {
+        'my-6': props.isLoading || props.isFetchingNextPage,
+      })}
+    >
       <div
         className={cn({
           'p-4 mx-auto border-2 rounded-lg w-max':
