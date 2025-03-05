@@ -1,7 +1,7 @@
 # Getting started
 
-1. Go to Github -> Settings -> Developer Settings
-2. Under _Personal Access Tokens_ create a fine-grained token
+1. _(optional)_ Go to Github -> Settings -> Developer Settings
+2. _(optional)_ Under _Personal Access Tokens_ create a fine-grained token
 3. _(optional)_ Select _Public Repositories (read-only)_ permission
 4. _(optional)_ Create a _.env.local_ file, add your token: `NEXT_PUBLIC_GITHUB_TOKEN=<YOUR_GH_TOKEN>`
 5. Install dependencies: `npm install`
