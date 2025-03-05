@@ -24,7 +24,9 @@ export default function InfiniteScrollMessage(props: InfiniteScrollMessageProps)
   return (
     <div ref={observerRef} className="h-10 mb-10 text-center">
       <div
-        className={cn('p-4 mx-auto border-2 rounded-lg w-max', {
+        className={cn({
+          'p-4 mx-auto border-2 rounded-lg w-max':
+            !(props.isLoading || props.hasNextPage || props.isError) || props.isError,
           'bg-red-200 text-red-600 border-red-600': props.isError,
           'bg-green-200 text-green-600 border-green-600': !(props.isLoading || props.hasNextPage || props.isError),
         })}
