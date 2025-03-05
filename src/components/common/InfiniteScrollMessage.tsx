@@ -1,6 +1,6 @@
 'use client';
 
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/common/useIntersectionObserver';
 import { cn } from '@/lib/utils';
 
 type InfiniteScrollMessageProps = {
