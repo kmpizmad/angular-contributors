@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Getting started
 
-## Getting Started
+1. Go to Github -> Settings -> Developer Settings
+2. Under _Personal Access Tokens_ create a fine-grained token
+3. Select _Public Repositories (read-only)_ permission
+4. _(optional)_ Create a _.env.local_ file, add your token: `NEXT_PUBLIC_GITHUB_TOKEN=<YOUR_GH_TOKEN>`
+5. Install dependencies: `npm install`
+6. Build & Run the application: `npm run build && npm start`
 
-First, run the development server:
+> **NOTE:** Step 4 ensure 5000 API requests instead of 60 per hour
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Modularized folder structure, easy to navigate. In some cases, it could be broken into more folders, but it would be an overkill in the current scale.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **NOTE:** There is no base component at all except for [shadcn](https://ui.shadcn.com/docs/components), so changing a component does not directly impact other components!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📦src
+┣ 📂app
+┃ ┣ 📂(home)
+┃ ┃ ┗ 📜page.tsx
+┃ ┣ 📂[user_tag]
+┃ ┃ ┗ 📂repos
+┃ ┃ ┃ ┗ 📜page.tsx
+┃ ┣ 📜favicon.ico
+┃ ┣ 📜globals.css
+┃ ┗ 📜layout.tsx
+┣ 📂components
+┃ ┣ 📂cards
+┃ ┃ ┣ 📜ContributorCard.tsx
+┃ ┃ ┗ 📜RepositoryCard.tsx
+┃ ┣ 📂common
+┃ ┃ ┣ 📜BackButton.tsx
+┃ ┃ ┗ 📜InfiniteScrollMessage.tsx
+┃ ┣ 📂maps
+┃ ┃ ┗ 📜SimpleMap.tsx
+┃ ┣ 📂popups
+┃ ┃ ┗ 📜UserLocationPopup.tsx
+┃ ┗ 📂ui
+┃ ┃ ┣ 📜button.tsx
+┃ ┃ ┗ 📜popover.tsx
+┣ 📂hooks
+┃ ┣ 📂api
+┃ ┃ ┣ 📜useGetContributorName.ts
+┃ ┃ ┣ 📜useInfiniteContributors.ts
+┃ ┃ ┗ 📜useInfiniteRepos.ts
+┃ ┗ 📂common
+┃ ┃ ┣ 📜useIntersectionObserver.ts
+┃ ┃ ┗ 📜useMediaQuery.ts
+┣ 📂interfaces
+┃ ┗ 📂entities
+┃ ┃ ┣ 📜IContributor.ts
+┃ ┃ ┣ 📜ILocation.ts
+┃ ┃ ┣ 📜IRepository.ts
+┃ ┃ ┗ 📜IUser.ts
+┣ 📂lib
+┃ ┣ 📜http.ts
+┃ ┗ 📜utils.ts
+┣ 📂providers
+┃ ┗ 📜ReactQueryClientProvider.tsx
+┗ 📂views
+┃ ┣ 📜ContributorList.tsx
+┃ ┗ 📜RepositoryList.tsx
 
-## Learn More
+## Solution
 
-To learn more about Next.js, take a look at the following resources:
+Fetching the contributor list does not include the name of the contributor, so for each card we have to fetch the corresponding user object from another source as well. This is NOT optimal, but to work around it a temporary variable is set instead of the name (user's tag).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This makes the change smooth as the viewer scrolls infinitely. No loading states, no excessive waiting.
