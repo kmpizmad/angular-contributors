@@ -39,8 +39,12 @@ export default function ContributorList() {
             'bg-green-200 text-green-600 border-green-600': !(isLoading || hasNextPage || isError),
           })}
         >
-          {isError && `Unexpected error occurred: ${error.message}`}
-          {!(isLoading || hasNextPage || isError) && "You've reached the end of the list"}
+          {isError && (
+            <div>
+              Unexpected error occurred: <strong>{error.message}</strong>
+            </div>
+          )}
+          {!(isLoading || hasNextPage || isError) && <div>You&apos;ve reached the end of the list</div>}
         </div>
         {(isLoading || isFetchingNextPage) && <div>Loading...</div>}
       </div>
