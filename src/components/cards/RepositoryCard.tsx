@@ -17,9 +17,9 @@ export default function RepositoryCard(props: RepositoryCardProps) {
     >
       <div className="flex flex-col items-center justify-between mb-4 sm:mb-0 sm:flex-row">
         <div className="mb-4">
-          <div className="flex items-center justify-center gap-1 sm:justify-start">
+          <div className="flex flex-col items-center justify-center gap-0 mb-2 leading-tight sm:mb-0 sm:leading-normal sm:gap-1 sm:flex-row sm:justify-start">
             <span className="font-bold tracking-wide uppercase">Repository:</span>
-            <span>{props.name}</span>
+            <span className="text-center">{props.name}</span>
           </div>
           <div className="flex items-center justify-center gap-1 text-xs italic leading-none sm:justify-start text-muted">
             <span className="font-semibold">last updated:</span>
