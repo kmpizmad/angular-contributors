@@ -14,7 +14,7 @@ export default function UserLocationPopup(props: UserLocationPopupProps) {
       <PopoverTrigger asChild>
         <Image src="/compass.png" alt="compass.png" width={32} height={32} className="cursor-pointer" />
       </PopoverTrigger>
-      <PopoverContent side="right" className="max-w-full w-lg">
+      <PopoverContent side="right" align="start" alignOffset={-50} className="max-w-full w-md">
         <SimpleMap location={props.location} />
       </PopoverContent>
     </Popover>

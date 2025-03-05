@@ -8,7 +8,7 @@ export default function SimpleMap(props: SimpleMapProps) {
   return (
     <iframe
       width="100%"
-      height="450"
+      height="350"
       style={{ border: 0 }}
       loading="lazy"
       allowFullScreen
