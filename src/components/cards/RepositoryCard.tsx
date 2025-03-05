@@ -24,7 +24,7 @@ export default function RepositoryCard(props: RepositoryCardProps) {
         </div>
         <div className="flex items-center justify-center gap-2">
           <span className="block -mt-1 text-xl leading-none">⭐</span>
-          <span className="flex items-center justify-center w-8 h-8 text-gray-600 bg-gray-200 border-2 border-gray-400 rounded">
+          <span className="flex items-center justify-center h-8 px-2 py-1 text-gray-600 bg-gray-200 border-2 border-gray-400 rounded min-w-8">
             {props.stars}
           </span>
         </div>
