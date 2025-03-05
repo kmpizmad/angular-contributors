@@ -9,7 +9,7 @@ type RepositoryCardProps = {
 
 export default function RepositoryCard(props: RepositoryCardProps) {
   return (
-    <div className="max-w-full p-6 bg-white shadow-md w-2xl rounded-xl">
+    <div className="max-w-full p-6 bg-white shadow-md min-h-32 w-2xl rounded-xl">
       <div className="flex items-center justify-between">
         <div className="mb-4">
           <div className="flex items-center gap-1">

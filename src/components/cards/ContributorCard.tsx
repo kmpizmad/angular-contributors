@@ -32,7 +32,7 @@ export default function ContributorCard(props: ContributorCardProps) {
   }, [data?.data.location]);
 
   return (
-    <div className="flex flex-col max-w-xs gap-4 p-6 bg-white rounded-xl min-w-xs">
+    <div className="flex flex-col max-w-full gap-4 p-6 bg-white shadow-md rounded-xl w-xs">
       <div className="flex items-start justify-between">
         <ContributorImage imageUrl={props.imageUrl} tag={props.tag} />
         {data?.data.location && (
@@ -65,7 +65,7 @@ function ContributorImage(props: { imageUrl: string; tag: string }) {
       <div className="flex items-center justify-center bg-contributor-image w-[72px] h-[72px]">
         <Image src={props.imageUrl} alt={props.tag} width={62} height={62} />
       </div>
-      <div className="text-xs text-muted">{props.tag}</div>
+      <div className="text-xs text-muted">@{props.tag}</div>
     </div>
   );
 }
