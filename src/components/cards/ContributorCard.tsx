@@ -35,14 +35,16 @@ export default function ContributorCard(props: ContributorCardProps) {
     <div className="flex flex-col max-w-xs gap-4 p-6 bg-white rounded-xl min-w-xs">
       <div className="flex items-start justify-between">
         <ContributorImage imageUrl={props.imageUrl} tag={props.tag} />
-        <Image
-          src="/compass.png"
-          alt="compass.png"
-          width={32}
-          height={32}
-          className="cursor-pointer"
-          onClick={() => fetchGeolocation()}
-        />
+        {data?.data.location && (
+          <Image
+            src="/compass.png"
+            alt="compass.png"
+            width={32}
+            height={32}
+            className="cursor-pointer"
+            onClick={() => fetchGeolocation()}
+          />
+        )}
       </div>
       <div>
         <div className="text-lg font-bold text-body">{data?.data.name || props.name}</div>
@@ -50,9 +52,7 @@ export default function ContributorCard(props: ContributorCardProps) {
       </div>
       <div className="flex items-center justify-center">
         <Button className="uppercase transition-all bg-transparent border-2 rounded cursor-pointer border-primary text-primary hover:text-white">
-          <Link href={`/${props.tag}/repos`} target="_blank">
-            View Repositories
-          </Link>
+          <Link href={`/${props.tag}/repos`}>View Repositories</Link>
         </Button>
       </div>
     </div>
