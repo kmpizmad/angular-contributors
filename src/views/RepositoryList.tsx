@@ -14,6 +14,7 @@ export default function RepositoryList({ tag }: { tag: string }) {
           page.data.map(repo => (
             <RepositoryCard
               key={`repository-${repo.id}`}
+              url={repo.url}
               name={repo.name}
               stars={repo.stargazers_count}
               isForked={repo.fork}
