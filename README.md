@@ -7,7 +7,7 @@
 5. Install dependencies: `npm install`
 6. Build & Run the application: `npm run build && npm start`
 
-> **NOTE:** Step 4 ensure 5000 API requests instead of 60 per hour
+> **NOTE:** Step 4 ensures 5000 API requests instead of 60 per hour
 
 ## Structure
 
@@ -15,6 +15,7 @@ Modularized folder structure, easy to navigate. In some cases, it could be broke
 
 > **NOTE:** There is no base component at all except for [shadcn](https://ui.shadcn.com/docs/components), so changing a component does not directly impact other components!
 
+```
 📦src
 ┣ 📂app
 ┃ ┣ 📂(home)
@@ -61,6 +62,7 @@ Modularized folder structure, easy to navigate. In some cases, it could be broke
 ┗ 📂views
 ┃ ┣ 📜ContributorList.tsx
 ┃ ┗ 📜RepositoryList.tsx
+```
 
 ## Solution
 
