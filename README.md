@@ -6,8 +6,9 @@
 4. _(optional)_ Create a _.env.local_ file, add your token: `NEXT_PUBLIC_GITHUB_TOKEN=<YOUR_GH_TOKEN>`
 5. Install dependencies: `npm install`
 6. Build & Run the application: `npm run build && npm start`
+7. Go to <http://localhost:3000>
 
-> **NOTE:** Step 4 ensures 5000 API requests instead of 60 per hour
+> **NOTE:** Step 1-4 ensures 5000 API requests instead of 60 per hour
 
 ## Structure
 
