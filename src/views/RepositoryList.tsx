@@ -9,7 +9,7 @@ export default function RepositoryList({ tag }: { tag: string }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 place-items-center">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 place-items-center">
         {data?.pages.flatMap(page =>
           page.data.map(repo => (
             <RepositoryCard
