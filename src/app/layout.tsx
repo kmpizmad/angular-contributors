@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import { Open_Sans } from 'next/font/google';
 import ReactQueryClientProvider from '@/providers/ReactQueryClientProvider';
+import { cn } from '@/lib/utils';
+import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const fontSans = Open_Sans({
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['300', '400', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -21,8 +18,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary-background`}>
-        <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+      <body className={cn('antialiased bg-primary-background', fontSans.variable)}>
+        <ReactQueryClientProvider>
+          <main className="p-6 mx-auto max-w-7xl">{children}</main>
+        </ReactQueryClientProvider>
       </body>
     </html>
   );
